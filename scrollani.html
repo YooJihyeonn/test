@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* main font */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&display=swap');
+/* sub font */
+@import url('https://fonts.googleapis.com/css2?family=Antic+Didone&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Antic+Didone&display=swap');
+/* korean font */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300;400;500;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300;400;500&display=swap');
+*{margin: 0; padding: 0; box-sizing: border-box; list-style: none; text-decoration: none; color: #fff989;}
+section{
+    width: 100%;
+    height: 100vh;
+    background-color: #30371e;
+}
+    #brand-intro{
+    width: 100%;
+    height: 100vh;
+    background-color: #30371e;
+}
+.flex{display: flex;}
+.hidden{display: none;}
+#brand-intro p{text-align: center; color: #fff;}
+.b-left{
+    margin-right: 65vw;
+    line-height: 4vh;
+    font-size: 1rem;
+    letter-spacing: 0.1vw;
+}
+.b-right{
+    margin-left: 65vw;
+    line-height: 4vh;
+    font-size: 1rem;
+    letter-spacing: 0.1vw;
+}
+.scense-t{
+    margin-top: 15vh;
+    line-height: 5vh;
+    letter-spacing: 0.2vw;
+    font-family: 'IBM Plex Sans KR', sans-serif;
+}
+#brand{
+    width: 100%;
+    height: 150vh;
+    background-image: url(./images/imges_22.jpg);
+    /* background-color: #557744; */
+    position: relative;
+}
+#brandwrap>ul{padding: 15vh;}
+#brandwrap>ul>li{
+    color: #fff;
+    font-family: 'Noto Serif KR', serif;
+    font-size: 0.9rem;
+    margin-bottom: 10vh;
+    line-height: 5vh;
+}
+.b-big{
+    width: 50%;
+    height: 100vh;
+}
+.brand-logo{
+    background-image: url(./images/images_26.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 40vw;
+    height: 20vh;
+    position: absolute;
+    top: 40%;
+    left: 5%;
+}
+.b-small{
+    width: 20vw;
+    height: 40vh;
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    top: 70vh;
+}
+
+/* scroll animation (sa, scroll animation) */
+.sa{
+    opacity: 0;
+    transform: all .5s ease;
+}
+.sa-up{transform: translate(0,10vw);}
+.sa.show{opacity: 1; transform: none;}
+    </style>
+</head>
+<body>
+    <section></section>
+    <section id="brand-intro">
+        <p class="b-left sa sa-up" data-sa="100">1등급 조향사가 만들어낸<br>조향사가 생각하는 순간을 담은 향을 만듭니다.</p>
+        <p class="b-right sa sa-up" data-sa="200">좋은 향기를 남긴다는 것은<br>공간에 대한 좋은 기억을 남기는 수단입니다. </p>
+        <p class="scense-t sa sa-up" data-sa="300">딥체리, 피치티, 쥬스프롯, 레몬허브,<br>
+            린더리&다우니,화이트릴리, 그리에리어<br>
+            포레스트워크, 우디레인, 페어리테일<br>
+            퍼플로즈, 플로럴머스크, 시그니처솝<br>
+            에어리던, 오리지널머스크, 소피 프리지아</p>
+    </section>
+
+    <section id="brand">
+        <div id="brandwrap" class="flex">
+            <img class="b-big sa sa-up" data-sa="100" src="./images/images_18.png" alt="flower image">
+            <div class="brand-logo sa sa-up" data-sa="200"></div>
+            <ul>
+                <li class="sa sa-up" data-sa="300">국제향료협회의 규정을 준수한 안전한 향으로 <br>1급 조향사가 원료부터 블랜딩까지 직접 관리합니다.
+                </li>
+                <li class="sa sa-up" data-sa="400">국내 1급 수석 조향사가 제작한 파인 프래그런스 등급의 향오일과<br>에센설 오일이 블랜딩 되어 만들어져 향기가 오래도록 지속됩니다.</li>
+                <li class="sa sa-up" data-sa="500">석유에서 추출한 에탄올이 아닌 쌀,고구마,벼에서 추출한 식물성<br>에탄올을 사용해서 석유 추출 에탄올보다 비싸지만 특유의<br>
+                알콜취가 덜하고 안전합니다.</li>
+            </ul>
+        </div>
+        <img class="b-small sa sa-up" data-sa="600" src="./images/images_24.png" alt="에이센트 제품 연출샷">
+    </section>
+
+    <script>
+        const saDefaltMagin = 300;
+        const saElementList = document.querySelectorAll('.sa');
+        let saTriggerHeight = 0;
+        let saTriggerMagin = 0;
+
+        // const saMove =function(){
+        //     for(const element of saElementList){
+        //         if(!element.classList.contains('show')){
+        //             // contains으로 show라는 class가 존재하는지 확인한다.
+        //             if(window.innerHeight > element.getBoundingClientRect().top + saTriggerMagin){
+        //                 // window.innerHeight : 네비게이션 창을 제외한 높이
+        //                 // 뷰포트를 구하는 함수
+        //                 // document.documentElement.clientWidth : 뷰포트 너비
+        //                 // document.documentElement.clientHeight : 뷰포트 높이
+        //                 // 요소의 위치를 파악하는 함수 getBoundingClienRect()
+        //                 element.classList.add('show')
+        //             }
+        //         }
+        //     }
+        // }
+        // window.addEventListener('load',saMove);
+        // window.addEventListener('scroll',saMove);
+
+        const saMove =function(){
+            for(const element of saElementList){
+                if(!element.classList.contains('show')){
+                    if(element.dataset.saMargin){
+                        saTriggerMagin = parseInt(element.dataset.saMargin);
+                    }else{
+                        saTriggerMagin = saDefaltMagin;
+                    }
+                    if(element.dataset.saTrigger){
+                        saTriggerHeight = document.querySelector(element.dataset.saTrigger).getBoundingClienRect().top + saTriggerMagin;
+                    }else{
+                        saTriggerHeight = element.getBoundingClientRect().top + saTriggerMagin;
+                    }
+                    if(window.innerHeight > saTriggerHeight){
+                        element.classList.add('show');
+                    }
+                }
+            }
+        }
+        window.addEventListener('load',saMove);
+        window.addEventListener('scroll',saMove);
+    </script>
+</body>
+</html>
