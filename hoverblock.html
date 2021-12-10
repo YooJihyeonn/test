@@ -39,6 +39,11 @@
             font-size: 6rem;
             color: #547543;
         }
+        #diffserwrap{
+          width: 100%;
+          height: 67.5vh;
+          /* border: 1px solid red; */
+        }
 
         .diffser {
             width: 70vw;
@@ -63,10 +68,6 @@
             position: relative;
         }
 
-        .fabirc img {
-            margin-left: 10vw;
-        }
-
         .fabirc h3 {
             position: absolute;
             top: 40vh;
@@ -82,22 +83,15 @@
             position: absolute;
             z-index: 1;
             right: 0;
-            top: 57vw;
         }
 
         /* script about diffser section*/
         .hidden {
             display: none;
         }
-        #diffserwrap{
+        /* #diffserwrap{
             position: relative;
-        }
-        #diffserimg {
-            top: 0;
-            left: 0;
-            position: absolute;
-            width: 30vw;
-        }
+        } */
         .container {
             width: 70vw;
             height: 47vh;
@@ -105,7 +99,7 @@
             z-index: 11;
             margin-top: 20vh;
             margin-left: 25vh;
-            border: 1px solid red;
+            /* border: 1px solid red; */
         }
         .diffsertext {
             position: absolute;
@@ -117,17 +111,48 @@
         .containerfabric{
             width: 70vw;
             height: 50vh;
-            position: absolute;
+            position: relative;
             z-index: 11;
-            margin-top: 67vh;
+            /* margin-top: 67vh; */
             margin-left: 25vh;
-            border: 1px solid blue;
         }
         .fabrictext{
             position: absolute;
             top: 104vh;
             right: 35vh;
+            transition-duration: 0.5s, 1s;
         }
+        img{
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 30vw;
+        }
+
+        .containerdeo{
+          position: absolute;
+          width: 70vw;
+          height: 50vh;
+          z-index: 11;
+          margin-left: 25vh;
+          /* border: 1px solid blue; */
+        }
+        .deotext{
+          position: absolute;
+          top: 154vh;
+          left: 25vh;
+          transition-duration: 0.5s, 1s;
+        }
+        .deoline{
+          width: 85vw;
+          height: 0.2vh;
+          background-color: #547543;
+          border: none;
+          margin: 0;
+          position: absolute;
+          top: 167vh;
+        }
+
     </style>
 </head>
 
@@ -136,22 +161,24 @@
         <div id="diffserwrap">
             <div class="container"></div>
             <img id="diffserimg" class="hidden" src="./images/images_25.png" alt="디퓨져">
-            <div class="textwrap">
-                <h3 class="diffsertext">01.Diffuser</h3>
-                <hr class="leftline">
-            </div>
+            <h3 class="diffsertext">01.Diffuser</h3>
+            <hr class="leftline">
         </div>
 
-        <div class="containerfabric"></div>
-        <img class="hidden" src="./images/images_29.png" alt="섬유 향수">
-        <h3 class="fabrictext">02.Fabric Perfume</h3>
-        <hr class="rightline">
-        <!-- <div class="deo">
-            <img class="hidden" src="./images/images_33.png" alt="데오도란트">
-            <h3>03.Deodrant</h3>
+        <div id="fabricwrap">
+          <div class="containerfabric"></div>
+          <img class="hidden" src="./images/images_29.png" alt="섬유 향수">
+          <h3 class="fabrictext">02.Fabric Perfume</h3>
+          <hr class="rightline">
         </div>
-        <hr class="leftline">
-        <div class="hand">
+
+        <div id="deowrap">
+          <div class="containerdeo"></div>
+          <img class="hidden" src="./images/images_33.png" alt="데오도란트">
+          <h3 class="deotext">03.Deodrant</h3>
+          <hr class="deoline">
+        </div>
+        <!-- <div class="hand">
             <img class="hidden" src="./images/images_37.png" alt="핸드워시">
             <h3>04.Hand care</h3>
         </div>
@@ -174,9 +201,9 @@
             textTag.style.color = "green"
         });
         container.onmousemove = (e) => {
-            // 마우스의 좌표값 clientX,Y
-            const x = e.clientX;
-            const y = e.clientY;
+            // 마우스의 좌표값 clientX,Y 현재 보이는 브라우저 기준 스크롤은 무시하고 해당 페이지의 상단을 0으로 측정
+            const x = e.pageX;
+            const y = e.pageY;
             imagesFadein.style.left = (x - 250) + "px";
             imagesFadein.style.top = (y - 140) + "px";
         };
@@ -186,6 +213,51 @@
             textTag.style.color = ""
         });
 
+        const fabricimg = document.querySelector('#fabricwrap img');
+        const fabircCon = document.querySelector('.containerfabric');
+        const fabricTag = document.querySelector('.fabrictext');
+        console.log(fabricimg);
+        console.log(fabircCon);
+        console.log(fabricTag);
+
+        fabircCon.addEventListener('mouseenter',function(){
+          fabricimg.classList.remove('hidden');
+          fabricTag.style.marginRight = "25vh";
+        });
+        fabircCon.onmousemove = (e) => {
+          // pageX,Y 문서 전체를 기준으로 삼음 스크롤 화면 포함해서 측정
+            const x = e.pageX;
+            const y = e.pageY;
+            fabricimg.style.left = (x - 250) + "px";
+            fabricimg.style.top = (y - 140) + "px";
+        };
+        fabircCon.addEventListener('mouseout',function(){
+          fabricimg.classList.add('hidden');
+          fabricTag.style.marginRight = "";
+        });
+        
+        const deoimg = document.querySelector('#deowrap img');
+        const deoCon = document.querySelector('.containerdeo');
+        const deoTag = document.querySelector('.deotext');
+        console.log(deoimg);
+        console.log(deoCon);
+        console.log(deoTag);
+        
+        deoCon.addEventListener('mouseenter',function(){
+          deoimg.classList.remove('hidden');
+          deoTag.style.marginLeft = "25vh";
+        });
+        deoCon.onmousemove = (e) => {
+          // pageX,Y 문서 전체를 기준으로 삼음 스크롤 화면 포함해서 측정
+            const x = e.pageX;
+            const y = e.pageY;
+            deoimg.style.left = (x - 250) + "px";
+            deoimg.style.top = (y - 140) + "px";
+        };
+        deoCon.addEventListener('mouseout',function(){
+          deoimg.classList.add('hidden');
+          deoTag.style.marginLeft = "";
+        });
     </script>
 </body>
 
