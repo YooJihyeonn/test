@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    color: #fff989;
+}
+
+#bg {
+    width: 100%;
+    height: 160vh;
+    position: relative;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-direction {
+    flex-direction: column;
+}
+
+.just-a {
+    justify-content: space-around;
+}
+
+.just-b {
+    justify-content: space-between;
+}
+
+.just-e {
+    justify-content: space-evenly;
+}
+
+.just-center {
+    justify-content: center;
+}
+
+.just-flexend {
+    justify-content: flex-end;
+}
+
+.align-item {
+    align-items: center;
+}
+
+.align-item-b {
+    align-items: flex-end;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.hidden {
+    display: none;
+}
+
+#visual {
+    width: 100%;
+    background-color: #30371e;
+
+}
+
+h1 {
+    margin-top: 25vh;
+    font-family: 'Cinzel', serif;
+    text-align: center;
+    font-size: 3.5rem;
+    font-weight: 500;
+}
+
+#bg-circle {
+    width: 30vw;
+    height: 40vh;
+    background-image: url(./images/images_07.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    position: absolute;
+    top: 23vh;
+    left: 35vw;
+}
+
+hr {
+    width: 0.15vw;
+    height: 15vh;
+    background-color: #fff989;
+    opacity: 0.5;
+    margin-top: 15vh;
+    margin-left: 50vw;
+    border: none;
+}
+
+.line_star {
+    margin-top: 5vh;
+    margin-left: 49.3vw;
+}
+
+#circle-text {
+    position: absolute;
+    top: 80vh;
+    left: 89vw;
+    position: fixed;
+    z-index: 11;
+    cursor: pointer;
+}
+
+#circle-text img {
+    width: 7vw;
+}
+
+h2 {
+    font-family: 'Antic Didone', serif;
+    font-size: 2rem;
+    text-align: center;
+    line-height: 7vh;
+    margin-top: 20vh;
+    letter-spacing: 0.2vw;
+    position: relative;
+    z-index: 999;
+}
+#brand-intro {
+    width: 100%;
+    height: 50vh;
+    background-color: #30371e;
+}
+
+#brand-intro li {
+    width: 21vw;
+    text-align: left;
+    color: #fff;
+    font-family: 'Noto Serif KR', serif;
+    font-size: 0.9rem;
+}
+
+.b-left {
+    margin-left: 10vw;
+    line-height: 3.5vh;
+    font-size: 1rem;
+    position: absolute;
+    top: 145vh;
+}
+
+.b-right {
+    margin-left: 70vw;
+    line-height: 4vh;
+    font-size: 1rem;
+}
+
+#scense-wrap {
+    width: 100%;
+    height: 15vh;
+    margin-top: 10vh;
+    /* border: 1px solid red; */
+}
+
+#scense-t {
+    width: 25vw;
+    /* border: 1px solid gold; */
+}
+#scense-t>li {
+    font-family: 'IBM Plex Sans KR', sans-serif;
+    font-size: 1rem;
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+}
+#scense-t>li:hover{
+  color: #fff989;
+}
+
+.sence-image {
+    width: 20vw;
+    height: 60vh;
+    background-color: salmon;
+    border-top-right-radius: 15vw 50%;
+    border-top-left-radius: 15vw 50%;
+    position: absolute;
+    top: 70vh;
+    left: 40vw;
+}
+.deepcherry{
+  border-top-right-radius: 15vw 50%;
+  border-top-left-radius: 15vw 50%;
+  background-image: url(./images/딥체리jpg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 20vw;
+  height: 60vh;
+  position: absolute;
+  /* z-index: 1; */
+}
+.peachs{
+  border-top-right-radius: 15vw 50%;
+  border-top-left-radius: 15vw 50%;
+  background-image: url(./images/피치티.jpg);
+  width: 20vw;
+  height: 60vh;
+  position: absolute;
+}
+.juicy{
+  border-top-right-radius: 15vw 50%;
+  border-top-left-radius: 15vw 50%;
+  background-image: url(./images/쥬스프롯.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 20vw;
+  height: 60vh;
+  position: absolute;
+}
+.lemon{
+  border-top-right-radius: 15vw 50%;
+  border-top-left-radius: 15vw 50%;
+  background-image: url(./images/레몬허브.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 20vw;
+  height: 60vh;
+  position: absolute;
+}
+.hidden{display: none;}
+.change{
+  color: #fff989;
+  font-weight: 500;
+}
+  </style>
+</head>
+<body>
+  <div id="visual">
+    <h1 class="flex just-center">Make a scent that<br>captures the moment.</h1>
+    <div id="bg-circle"></div>
+    <div id="circle-text">
+        <img src="./images/images_11.png" alt="돌아가는 글자들">
+    </div>
+    <hr>
+    <div class="line_star">
+        <img src="./images/images_14.png" alt="line star">
+    </div>
+    <h2>Leaving a good scent is a means<br>of leaving a good memory of space.</h2>
+    <div class="sence-image">
+      <div class="deepcherry"></div>
+      <div class="peachs hidden"></div>
+      <div class="juicy hidden"></div>
+      <div class="lemon hidden"></div>
+    </div>
+</div>
+</div>
+<!------------------------------------------- header ------------------------------------------------>
+<section id="brand-intro">
+<ul>
+    <li class="b-left">
+        1등급 조향사가 만들어낸 조향사가 생각하는 순간을 담은 향을 만듭니다.<br>
+        우리는 새로운 관점으로 사회적 현상을 해석하고, 이를 바탕으로 향의 창조적 세계를 창조합니다.
+        우리는 향이 선사하는 새로운 경험을 통해, 삶의 감각이 더욱 풍요로워질 것임을 믿고 있습니다.
+    </li>
+    <li class="b-right">
+        좋은 향기를 남긴다는 것은공간에 대한 좋은 기억을 남기는 수단입니다.나만의 고유한 분위기, 지금의 감정을 압도하는 향기가 아니라, 내가 머물고 있는 그대로의 삶의 지점에서 부드럽게
+        레이어드 되는 향의 기쁨을 선사합니다.
+    </li>
+    <div id="scense-wrap" class="flex flex-direction align-item just-b">
+        <ul id="scense-t" class="flex">
+            <li class="cherry change ">딥체리</li>
+            <li class="peach-b ">피치티</li>
+            <li class="citrus">쥬스프롯</li>
+            <li class="lemon-b">레몬허브</li>
+        </ul>
+        <ul id="scense-t" class="flex">
+            <li><a href="#">런더리&다우니</a></li>
+            <li><a href="#">화이트릴리</a></li>
+            <li><a href="#">그린에리어</a></li>
+            <li><a href="#">포레스트워크</a></li>
+        </ul>
+        <ul id="scense-t" class="flex">
+            <li><a href="#">우디레인</a></li>
+            <li><a href="#">페어리테일</a></li>
+            <li><a href="#">퍼플로즈</a></li>
+            <li><a href="#">플로럴머스크</a></li>
+        </ul>
+        <ul id="scense-t" class="flex">
+            <li><a href="#">시그니처솝</a></li>
+            <li><a href="#">에어리던</a></li>
+            <li><a href="#">오리지널머스크</a></li>
+            <li><a href="#">소피프리지아</a></li>
+        </ul>
+    </div>
+</ul>
+</section>
+
+<script>
+  const scenseButtonOne = document.querySelector('.cherry');
+  const deepcherry = document.querySelector('.deepcherry');
+  const scenseButtonTwo = document.querySelector('.peach-b');
+  const peachs = document.querySelector('.peachs');
+  const scenseButtonThree = document.querySelector('.citrus');
+  const juicy = document.querySelector('.juicy');
+  const scenseButtonFour = document.querySelector('.lemon-b');
+  const lemon = document.querySelector('.lemon');
+
+  console.log(scenseButtonOne);
+  console.log(deepcherry);
+  scenseButtonOne.addEventListener('click',function(){
+    deepcherry.style.display ="block"
+    scenseButtonOne.classList.toggle('change')
+  });
+  scenseButtonTwo.addEventListener('click',()=>{
+    peachs.classList.toggle('hidden')
+    scenseButtonTwo.classList.toggle('change')
+  });
+  scenseButtonThree.addEventListener('click',()=>{
+    juicy.classList.toggle('hidden')
+    scenseButtonThree.classList.toggle('change')
+  });
+  scenseButtonFour.addEventListener('click',()=>{
+    lemon.classList.toggle('hidden')
+    scenseButtonFour.classList.toggle('change')
+  });
+  // 이벤트 타켓 event.target / event.currentTarget
+</script>
+</body>
+</html>
