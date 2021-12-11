@@ -88,6 +88,8 @@
         /* script about diffser section*/
         .hidden {
             display: none;
+          transition-duration: 0.5s, 1s;
+
         }
         /* #diffserwrap{
             position: relative;
@@ -197,6 +199,11 @@
         console.log(imagesFadein);
 
         container.addEventListener('mouseenter', function () {
+          imagesFadein.animate([
+              {height:'10vh',width:'10vw',opacity:0},
+              {height:'20vh',width:'20vw',opacity:0.5},
+              {height:'35vh',width:'30vw',opacity:1}
+            ],{duration:500,fill: 'forwards'});
             imagesFadein.classList.remove('hidden');
             textTag.style.marginLeft = "25vh";
             textTag.style.color = "green"
@@ -222,6 +229,11 @@
         console.log(fabricTag);
 
         fabircCon.addEventListener('mouseenter',function(){
+          fabricimg.animate([
+              {height:'10vh',width:'10vw',opacity:0},
+              {height:'20vh',width:'20vw',opacity:0.5},
+              {height:'35vh',width:'30vw',opacity:1}
+            ],{duration:500,fill: 'forwards'});
           fabricimg.classList.remove('hidden');
           fabricTag.style.marginRight = "25vh";
         });
@@ -245,6 +257,11 @@
         console.log(deoTag);
         
         deoCon.addEventListener('mouseenter',function(){
+          deoimg.animate([
+              {height:'10vh',width:'10vw',opacity:0},
+              {height:'20vh',width:'20vw',opacity:0.5},
+              {height:'35vh',width:'30vw',opacity:1}
+            ],{duration:500,fill: 'forwards'});
           deoimg.classList.remove('hidden');
           deoTag.style.marginLeft = "25vh";
         });
