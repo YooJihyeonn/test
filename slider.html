@@ -59,9 +59,10 @@
 }
     #slider {
     width: 100%;
-    height: 130vh;
+    /* height: 130vh; */
     padding-top: 20vh;
     position: relative;
+    border: 1px solid black;
 }
 
 h4 {
@@ -88,22 +89,40 @@ h4 {
 #sliderimg {
     margin-top: 20vh;
 }
-
-.change img {
-    position: relative;
-    z-index: 1;
+#prodctimage{
+  position: relative;
+  z-index: 1;
 }
-/* .c-bgimge {
-    width: 20vw;
-    height: 45vh;
-    position: absolute;
-    top: 40vh;
-    right: 40vw;
-    border-radius: 20vw 40%;
+/* .change {
+  width: 20vw;
+  height: 45vh;
 } */
-
+.container{
+  width: 20vw;
+  height: 45vh;
+  border-radius: 20vw 40%;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid green;
+}
+.c-bgimge {
+  width: 100%;
+  height: 45vh;
+  border: 1px solid blue;
+  display: flex;
+  position: relative;
+}
+.c-bgimge div{
+  width: 20vw;
+  height: 45vh;
+  border-radius: 20vw 40%;
+  border: 1px solid red;
+  position: absolute;
+  top:0;
+  left: 0;
+}
 .sliderbuttonwrap {
-    margin-top: 10vh;
+    /* margin-top: 10vh; */
     width: 20vw;
 }
 .slidertext ul {
@@ -121,58 +140,27 @@ h4 {
     margin-top: 2vh;
     font-weight: 500;
 }
-.slidertext img{z-index: 11;}
 .sliderlemon{
-  width: 20vw;
-  height: 45vh;
-  border-radius: 20vw 40%;
   background-image: url(./images/레몬허브.jpg);
   background-size: cover;
-  position: absolute;
-  top: 40vh;
-  right: 40vw;
 }
 .slidergreenairy{
-  width: 20vw;
-  height: 45vh;
-  border-radius: 20vw 40%;
   background-size: cover;
-  position: absolute;
-  top: 40vh;
-  left: 20vw;
   background-image: url(./images/green-airy.jpg);
 }
-/* .slidersoap{
-  width: 20vw;
-  height: 45vh;
-  border-radius: 20vw 40%;
+.slidersoap{
   background-size: cover;
-  position: absolute;
-  top: 40vh;
-  right: 40vw;
   background-image: url(./images/whitelily.jpg);
 }
 .sliderdowny{
-  width: 20vw;
-  height: 45vh;
-  border-radius: 20vw 40%;
   background-size: contain;
-  position: absolute;
-  top: 40vh;
-  right: 40vw;
   background-image: url(./images/Folegandros.jpg);
   background-position: top;
 }
 .slidermusk{
-  width: 20vw;
-  height: 45vh;
-  border-radius: 20vw 40%;
   background-size: 20vw;
-  position: absolute;
-  top: 40vh;
-  right: 40vw;
   background-image: url(./images/Xuebing\ Du_\ Photo.png);
-} */
+}
 .hidden{display: none;}
   </style>
 </head>
@@ -180,39 +168,48 @@ h4 {
   <section id="slider">
     <h4>Best for scense</h4>
     <div class="bgcircle-1"></div>
-    <div id="sliderimg" class="flex just-a">
-        <div class="slidertext flex flex-direction align-item">
-            <img src="./images/images_41.png" alt="시그니처솝">
+    <div id="sliderimg" >
+      <div id="prodctimage" class="flex just-a">
+        <img src="./images/images_41.png" alt="시그니처솝">
+        <img src="./images/images_44.png" alt="그린에리어">
+        <img src="./images/images_47.png" alt="레몬허브">
+        <img src="./images/images_49.png" alt="런드리다우니">
+        <img src="./images/images_52.png" alt="오리지널머스크">
+      </div>
+      <div class="container">
+        <div class="c-bgimge">
+          <div class="slidermusk" id="lastClone"></div>
+          <div class="sliderlemon"></div>
+          <div class="slidergreenairy"></div>
+          <div class="slidersoap"></div>
+          <div class="sliderdowny"></div>
+          <div class="slidermusk"></div>
+          <div class="sliderlemon" id="firstClone"></div>
+        </div>
+      </div>
+      <div id="producttext" class="flex just-a">
+        <div class="slidertext">
             <ul>Signature Soup</ul>
             <li>시그니처 솝</li>
         </div>
-        <div class="slidertext flex flex-direction align-item">
-            <img src="./images/images_44.png" alt="그린에리어">
+        <div class="slidertext">
             <ul>Green Airy</ul>
             <li>그린 에리어</li>
         </div>
-        <div class="change slidertext flex flex-direction align-item">
-            <img src="./images/images_47.png" alt="레몬허브">
+        <div class="change slidertext">
             <ul>Lemon Herb</ul>
             <li>레몬 허브</li>
-            <div class="c-bgimge">
-              <div class="sliderlemon"></div>
-              <div class="slidergreenairy"></div>
-              <div class="slidersoap"></div>
-              <div class="sliderdowny"></div>
-              <div class="slidermusk"></div>
-            </div>
         </div>
-        <div class="slidertext flex flex-direction align-item">
-            <img src="./images/images_49.png" alt="런드리다우니">
+        
+        <div class="slidertext">
             <ul>Lundry&Downy</ul>
             <li>런드리 다우니</li>
         </div>
-        <div class="slidertext flex flex-direction align-item">
-        <img src="./images/images_52.png" alt="오리지널머스크">
-        <ul>Original Musk</ul>
-        <li>오리지널머스크</li>
+        <div class="slidertext">
+          <ul>Original Musk</ul>
+          <li>오리지널머스크</li>
         </div>
+      </div>
     </div>
     <div class="sliderbutton flex just-center">
         <div class="sliderbuttonwrap flex just-b">
@@ -222,4 +219,67 @@ h4 {
     </div>
 </section>
 </body>
+
+<script>
+  const change = document.querySelector('.c-bgimge');
+  const buttonLeft = document.querySelector('.button-l');
+  const buttonRight = document.querySelector('.button-r')
+  const changeImages = document.querySelectorAll('.c-bgimge>div');
+  // const changeImages = ['.sliderlemon','.slidergreenairy','slidersoap','sliderdowny','slidermusk'];
+  console.log(change);
+  console.log(buttonLeft);
+  console.log(buttonRight);
+  console.log(changeImages);
+
+  let counter =1;
+  const size = changeImages[0].clientWidth;
+  // 실제하고 있는 이미지가 얼만큼 크기를 차지하고 있는지
+  // change.style.transform = 'translateX('+(-size*counter)+'vw)';
+  // button 
+  buttonRight.addEventListener('click',function(){
+    if(counter >= changeImages.length -1) return;
+    change.style.transition = 'transform 0.4s ease-in-out';
+    counter++;
+    change.style.transform = 'translateX('+(-size*counter)+'vw)';
+  });
+
+  buttonLeft.addEventListener('click',function(){
+    if(counter <=0) return;
+    change.style.transition = 'transform 1s ease-in-out';
+    counter--;
+    change.style.transform = 'translateX('+(-size*counter)+'vw)';
+  });
+  // jump to first/last slide
+  change.addEventListener('transitionend',function(){
+    console.log(changeImages[counter]);
+    if(changeImages[counter].id === 'lastClone'){
+      change.style.transition="none";
+      counter =changeImages.length -2; //count 초기화
+      change.style.transform = 'translateX('+(-size*counter)+'vw)';
+    }else if(changeImages[counter].id === 'firstClone'){
+      counter =changeImages.length - counter; //count 초기화
+      change.style.transform = 'translateX('+(-size*counter)+'vw)';
+    }
+  });
+
+  // for(let i=0; i<sliderImages.length; i++){
+  //   sliderImages[i].style.opacity = 0;
+  //   sliderImages[i].style.display = "none";
+  //   sliderImages[i].style.marginLeft = 0;
+  // };
+
+  // let index = 0;
+  // sliderButton.addEventListener('click',()=>{
+  //   let opacityValue =0;
+  //   const fadeIn = setInterval(function(){
+  //     opacityValue += 0.1
+  //     console.log(opacityValue);
+  //     sliderImages[index-1].style.opacity=opacityValue;
+  //     if(opacityValue>1){
+  //       clearInterval(fadeIn)
+  //     }
+  //   },100);
+  //   sliderImages[index].style.display="block"
+  // })
+</script>
 </html>
