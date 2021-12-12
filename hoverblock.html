@@ -29,7 +29,6 @@
             width: 100%;
             height: 260vh;
             background-color: #fffcc7;
-            /* padding: 20vh 25vh 0 25vh; */
             position: relative;
         }
 
@@ -45,11 +44,11 @@
           /* border: 1px solid red; */
         }
 
-        .diffser {
+        /* .diffser {
             width: 70vw;
             height: 55vh;
             position: relative;
-        }
+        } */
         .leftline {
             width: 85vw;
             height: 0.2vh;
@@ -101,7 +100,7 @@
             z-index: 11;
             margin-top: 20vh;
             margin-left: 25vh;
-            /* border: 1px solid red; */
+            border: 1px solid red;
         }
         .diffsertext {
             position: absolute;
@@ -156,6 +155,32 @@
           top: 167vh;
         }
 
+        .containerhand {
+    position: absolute;
+    width: 70vw;
+    height: 50vh;
+    z-index: 11;
+    margin-left: 25vh;
+    margin-top: 50vh;
+    border: 1px solid blue;
+}
+
+.handtext {
+    position: absolute;
+    top: 200vh;
+    left: 25vh;
+    transition-duration: 0.5s, 1s;
+}
+.handline{
+    width: 85vw;
+    height: 0.2vh;
+    background-color: #547543;
+    border: none;
+    margin: 0;
+    position: absolute;
+    z-index: 1;
+    right: 0;
+}
     </style>
 </head>
 
@@ -181,11 +206,13 @@
           <h3 class="deotext">03.Deodrant</h3>
           <hr class="deoline">
         </div>
-        <!-- <div class="hand">
-            <img class="hidden" src="./images/images_37.png" alt="핸드워시">
-            <h3>04.Hand care</h3>
-        </div>
-        <hr class="rightline"> -->
+        
+        <div id="handwrap">
+          <div class="containerhand"></div>
+          <img class="hidden" src="./images/images_37.png" alt="핸드워시">
+          <h3 class="handtext">04.Hand care</h3>
+          <hr class="handline">
+      </div>
     </section>
 
     <script>
