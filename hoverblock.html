@@ -2,308 +2,417 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        /* main font */
-        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&display=swap');
-        /* sub font */
-        @import url('https://fonts.googleapis.com/css2?family=Antic+Didone&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Antic+Didone&display=swap');
-        /* korean font */
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300;400;500;600;700;900&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300;400;500&display=swap');
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* main font */
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&display=swap');
+    /* sub font */
+    @import url('https://fonts.googleapis.com/css2?family=Antic+Didone&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Antic+Didone&display=swap');
+    /* korean font */
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300;400;500;600;700;900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300;400;500&display=swap');
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            list-style: none;
-            text-decoration: none;
-            color: #fff989;
-        }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      list-style: none;
+      text-decoration: none;
+      color: #fff989;
+    }
 
-        #product {
-            width: 100%;
-            height: 260vh;
-            background-color: #fffcc7;
-            position: relative;
-        }
+    #product {
+      width: 100%;
+      height: 240vh;
+      background-color: #fffcc7;
+      /* position: relative; */
+    }
 
-        h3 {
-            font-family: 'Cinzel', serif;
-            font-weight: 400;
-            font-size: 6rem;
-            color: #547543;
-        }
-        #diffserwrap{
-          width: 100%;
-          height: 67.5vh;
-          /* border: 1px solid red; */
-        }
+    h3 {
+      font-family: 'Cinzel', serif;
+      font-weight: 400;
+      font-size: 6rem;
+      color: #547543;
+    }
 
-        /* .diffser {
-            width: 70vw;
-            height: 55vh;
-            position: relative;
-        } */
-        .leftline {
-            width: 85vw;
-            height: 0.2vh;
-            background-color: #547543;
-            border: none;
-            position: absolute;
-            z-index: 1;
-            top: 67vh;
-            left: 0;
-            margin: 0;
-        }
+    #diffserwrap {
+      width: 100%;
+      height: 67.5vh;
+      /* border: 1px solid red; */
+    }
 
-        .fabirc {
-            width: 100%;
-            height: 55vh;
-            position: relative;
-        }
+    .leftline {
+      width: 85vw;
+      height: 0.2vh;
+      background-color: #547543;
+      border: none;
+      position: absolute;
+      z-index: 1;
+      top: 67vh;
+      left: 0;
+      margin: 0;
+    }
 
-        .fabirc h3 {
-            position: absolute;
-            top: 40vh;
-            right: 0;
-        }
+    .fabirc {
+      width: 100%;
+      height: 55vh;
+      position: relative;
+    }
 
-        .rightline {
-            width: 85vw;
-            height: 0.2vh;
-            background-color: #547543;
-            border: none;
-            margin: 0;
-            position: absolute;
-            z-index: 1;
-            right: 0;
-        }
+    .fabirc h3 {
+      position: absolute;
+      top: 40vh;
+      right: 0;
+    }
 
-        /* script about diffser section*/
-        .hidden {
-            display: none;
-          transition-duration: 0.5s, 1s;
+    .rightline {
+      width: 85vw;
+      height: 0.2vh;
+      background-color: #547543;
+      border: none;
+      margin: 0;
+      position: absolute;
+      z-index: 1;
+      right: 0;
+      top: 114.5vh;
+    }
 
-        }
-        /* #diffserwrap{
+    /* script about diffser section*/
+    .hidden {
+      display: none;
+      transition-duration: 0.5s, 1s;
+
+    }
+
+    /* #diffserwrap{
             position: relative;
         } */
-        .container {
-            width: 70vw;
-            height: 47vh;
-            position: absolute;
-            z-index: 11;
-            margin-top: 20vh;
-            margin-left: 25vh;
-            border: 1px solid red;
-        }
-        .diffsertext {
-            position: absolute;
-            top: 55vh;
-            left: 25vh;
-            transition-duration: 0.5s, 1s;
-            z-index: 10;
-        }
-        .containerfabric{
-            width: 70vw;
-            height: 50vh;
-            position: relative;
-            z-index: 11;
-            /* margin-top: 67vh; */
-            margin-left: 25vh;
-        }
-        .fabrictext{
-            position: absolute;
-            top: 104vh;
-            right: 35vh;
-            transition-duration: 0.5s, 1s;
-            z-index: 10;
-        }
-        img{
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 30vw;
-        }
+    .container {
+      width: 70vw;
+      height: 47vh;
+      position: absolute;
+      z-index: 11;
+      margin-top: 20vh;
+      margin-left: 25vh;
+      border: 1px solid red;
+    }
 
-        .containerdeo{
-          position: absolute;
-          width: 70vw;
-          height: 50vh;
-          z-index: 11;
-          margin-left: 25vh;
-          /* border: 1px solid blue; */
-        }
-        .deotext{
-          position: absolute;
-          top: 154vh;
-          left: 25vh;
-          transition-duration: 0.5s, 1s;
-        }
-        .deoline{
-          width: 85vw;
-          height: 0.2vh;
-          background-color: #547543;
-          border: none;
-          margin: 0;
-          position: absolute;
-          top: 167vh;
-        }
+    .diffsertext {
+      position: absolute;
+      top: 55vh;
+      left: 25vh;
+      transition-duration: 0.5s, 1s;
+      z-index: 10;
+    }
+    #diffserimg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 30vw;
+    }
+    .containerfabric {
+      width: 70vw;
+      height: 47vh;
+      position: absolute;
+      z-index: 11;
+      /* margin-top: 67vh; */
+      margin-left: 25vh;
+      border: 1px solid red;
+      
+    }
+    #fabircimg {
+      position: absolute;
+      /* top: 20vh; */
+      top: 0;
+      left: 0;
+      width: 30vw;
+    }
+    .fabrictext {
+      position: absolute;
+      top: 102vh;
+      right: 35vh;
+      transition-duration: 0.5s, 1s;
+      z-index: 10;
+    }
+    #deoimg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 30vw;
+    }
 
-        .containerhand {
-    position: absolute;
-    width: 70vw;
-    height: 50vh;
-    z-index: 11;
-    margin-left: 25vh;
-    margin-top: 50vh;
-    border: 1px solid blue;
-}
+    #handimg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 30vw;
+    }
 
-.handtext {
-    position: absolute;
-    top: 200vh;
-    left: 25vh;
-    transition-duration: 0.5s, 1s;
-}
-.handline{
-    width: 85vw;
-    height: 0.2vh;
-    background-color: #547543;
-    border: none;
-    margin: 0;
-    position: absolute;
-    z-index: 1;
-    right: 0;
-}
-    </style>
+    .containerdeo {
+      position: absolute;
+      width: 70vw;
+      height: 50vh;
+      z-index: 11;
+      margin-top: 47vh;
+      margin-left: 25vh;
+      border: 1px solid blue;
+    }
+
+    .deotext {
+      position: absolute;
+      top: 152vh;
+      left: 25vh;
+      transition-duration: 0.5s, 1s;
+    }
+
+    .deoline {
+      width: 85vw;
+      height: 0.2vh;
+      background-color: #547543;
+      border: none;
+      margin: 0;
+      position: absolute;
+      top: 164vh;
+    }
+
+    .containerhand {
+      position: absolute;
+      width: 70vw;
+      height: 50vh;
+      z-index: 11;
+      margin-left: 25vh;
+      margin-top: 97vh;
+      border: 1px solid green;
+    }
+
+    .handtext {
+      position: absolute;
+      top: 203vh;
+      right: 30vh;
+      transition-duration: 0.5s, 1s;
+    }
+
+    .handline {
+      width: 85vw;
+      height: 0.2vh;
+      background-color: #547543;
+      border: none;
+      margin: 0;
+      position: absolute;
+      z-index: 1;
+      right: 0;
+      top: 215vh;
+    }
+  </style>
 </head>
 
 <body>
-    <section id="product">
-        <div id="diffserwrap">
-            <div class="container"></div>
-            <img id="diffserimg" class="hidden" src="./images/images_25.png" alt="디퓨져">
-            <h3 class="diffsertext">01.Diffuser</h3>
-            <hr class="leftline">
-        </div>
+  <section id="product">
+    <div id="diffserwrap">
+      <div class="container"></div>
+      <img id="diffserimg" class="hidden" src="./images/images_25.png" alt="디퓨져">
+      <h3 class="diffsertext">01.Diffuser</h3>
+      <hr class="leftline">
+    </div>
 
-        <div id="fabricwrap">
-          <div class="containerfabric"></div>
-          <img class="hidden" src="./images/images_29.png" alt="섬유 향수">
-          <h3 class="fabrictext">02.Fabric Perfume</h3>
-          <hr class="rightline">
-        </div>
+    <div id="fabricwrap">
+      <div class="containerfabric" ></div>
+      <img id="fabircimg" class="hidden" src="./images/images_29.png" alt="섬유 향수">
+      <h3 class="fabrictext">02.Fabric Perfume</h3>
+      <hr class="rightline">
+    </div>
 
-        <div id="deowrap">
-          <div class="containerdeo"></div>
-          <img class="hidden" src="./images/images_33.png" alt="데오도란트">
-          <h3 class="deotext">03.Deodrant</h3>
-          <hr class="deoline">
-        </div>
-        
-        <div id="handwrap">
-          <div class="containerhand"></div>
-          <img class="hidden" src="./images/images_37.png" alt="핸드워시">
-          <h3 class="handtext">04.Hand care</h3>
-          <hr class="handline">
-      </div>
-    </section>
+    <div id="deowrap">
+      <div class="containerdeo"></div>
+      <img id="deoimg" class="hidden" src="./images/images_33.png" alt="데오도란트">
+      <h3 class="deotext">03.Deodrant</h3>
+      <hr class="deoline">
+    </div>
 
-    <script>
-        // h3에 마우스호버했을 때 h3이 옆으로 이동하면서 
-        // 보이지 않던 이미지가 보이고 마우스 커서를 따라다녔으면 좋겟어
-        // 그리고 정해진 영역에서 벗어나면 다음 영역에 이미지로 바뀌였으면 좋겟어
-        const imagesFadein = document.querySelector('#diffserimg');
-        const container = document.querySelector('.container');
-        const textTag = document.querySelector('.diffsertext')
-        console.log(container);
-        console.log(imagesFadein);
+    <div id="handwrap">
+      <div class="containerhand"></div>
+      <img id="handimg" class="hidden" src="./images/images_37.png" alt="핸드워시">
+      <h3 class="handtext">04.Hand care</h3>
+      <hr class="handline">
+    </div>
+  </section>
 
-        container.addEventListener('mouseenter', function () {
-          imagesFadein.animate([
-              {height:'10vh',width:'10vw',opacity:0},
-              {height:'20vh',width:'20vw',opacity:0.5},
-              {height:'35vh',width:'30vw',opacity:1}
-            ],{duration:500,fill: 'forwards'});
-            imagesFadein.classList.remove('hidden');
-            textTag.style.marginLeft = "25vh";
-            textTag.style.color = "green"
-        });
-        container.onmousemove = (e) => {
-            // 마우스의 좌표값 clientX,Y 현재 보이는 브라우저 기준 스크롤은 무시하고 해당 페이지의 상단을 0으로 측정
-            const x = e.pageX;
-            const y = e.pageY;
-            imagesFadein.style.left = (x - 250) + "px";
-            imagesFadein.style.top = (y - 140) + "px";
-        };
-        container.addEventListener('mouseout', function () {
-            imagesFadein.classList.add('hidden');
-            textTag.style.marginLeft = "0"
-            textTag.style.color = ""
-        });
+  <script>
+    // h3에 마우스호버했을 때 h3이 옆으로 이동하면서 
+    // 보이지 않던 이미지가 보이고 마우스 커서를 따라다녔으면 좋겟어
+    // 그리고 정해진 영역에서 벗어나면 다음 영역에 이미지로 바뀌였으면 좋겟어
+    const imagesFadein = document.querySelector('#diffserimg');
+    const container = document.querySelector('.container');
+    const textTag = document.querySelector('.diffsertext')
+    console.log(container);
+    console.log(imagesFadein);
 
-        const fabricimg = document.querySelector('#fabricwrap img');
-        const fabircCon = document.querySelector('.containerfabric');
-        const fabricTag = document.querySelector('.fabrictext');
-        console.log(fabricimg);
-        console.log(fabircCon);
-        console.log(fabricTag);
+    container.addEventListener('mouseenter', function () {
+      imagesFadein.animate([{
+          height: '10vh',
+          width: '10vw',
+          opacity: 0
+        },
+        {
+          height: '20vh',
+          width: '20vw',
+          opacity: 0.5
+        },
+        {
+          height: '35vh',
+          width: '30vw',
+          opacity: 1
+        }
+      ], {
+        duration: 500,
+        fill: 'forwards'
+      });
+      imagesFadein.classList.remove('hidden');
+      textTag.style.marginLeft = "25vh";
+    });
+    container.onmousemove = (e) => {
+      // 마우스의 좌표값 clientX,Y 현재 보이는 브라우저 기준 스크롤은 무시하고 해당 페이지의 상단을 0으로 측정
+      const x = e.pageX;
+      const y = e.pageY;
+      imagesFadein.style.left = (x - 250) + "px";
+      imagesFadein.style.top = (y - 140) + "px";
+    };
+    container.addEventListener('mouseout', function () {
+      imagesFadein.classList.add('hidden');
+      textTag.style.marginLeft = "0"
+    });
 
-        fabircCon.addEventListener('mouseenter',function(){
-          fabricimg.animate([
-              {height:'10vh',width:'10vw',opacity:0},
-              {height:'20vh',width:'20vw',opacity:0.5},
-              {height:'35vh',width:'30vw',opacity:1}
-            ],{duration:500,fill: 'forwards'});
-          fabricimg.classList.remove('hidden');
-          fabricTag.style.marginRight = "25vh";
-        });
-        fabircCon.onmousemove = (e) => {
-          // pageX,Y 문서 전체를 기준으로 삼음 스크롤 화면 포함해서 측정
-            const x = e.pageX;
-            const y = e.pageY;
-            fabricimg.style.left = (x - 250) + "px";
-            fabricimg.style.top = (y - 140) + "px";
-        };
-        fabircCon.addEventListener('mouseout',function(){
-          fabricimg.classList.add('hidden');
-          fabricTag.style.marginRight = "";
-        });
-        
-        const deoimg = document.querySelector('#deowrap img');
-        const deoCon = document.querySelector('.containerdeo');
-        const deoTag = document.querySelector('.deotext');
-        console.log(deoimg);
-        console.log(deoCon);
-        console.log(deoTag);
-        
-        deoCon.addEventListener('mouseenter',function(){
-          deoimg.animate([
-              {height:'10vh',width:'10vw',opacity:0},
-              {height:'20vh',width:'20vw',opacity:0.5},
-              {height:'35vh',width:'30vw',opacity:1}
-            ],{duration:500,fill: 'forwards'});
-          deoimg.classList.remove('hidden');
-          deoTag.style.marginLeft = "25vh";
-        });
-        deoCon.onmousemove = (e) => {
-          // pageX,Y 문서 전체를 기준으로 삼음 스크롤 화면 포함해서 측정
-            const x = e.pageX;
-            const y = e.pageY;
-            deoimg.style.left = (x - 250) + "px";
-            deoimg.style.top = (y - 140) + "px";
-        };
-        deoCon.addEventListener('mouseout',function(){
-          deoimg.classList.add('hidden');
-          deoTag.style.marginLeft = "";
-        });
-    </script>
+    const fabricImg = document.querySelector('#fabircimg');
+    const fabricCon = document.querySelector('.containerfabric');
+    const fabricTag = document.querySelector('.fabrictext');
+    console.log(fabricImg);
+    console.log(fabricCon);
+    console.log(fabricTag);
+    console.dir(fabricTag)
+
+    fabricCon.addEventListener('mouseenter', function () {
+      fabricImg.animate([{
+          height: '10vh',
+          width: '10vw',
+          opacity: 0
+        },
+        {
+          height: '20vh',
+          width: '20vw',
+          opacity: 0.5
+        },
+        {
+          height: '35vh',
+          width: '30vw',
+          opacity: 1
+        }
+      ], {
+        duration: 500,
+        fill: 'forwards'
+      });
+      fabricImg.classList.remove('hidden');
+      fabricTag.style.marginRight = "25vh";
+    });
+    fabricCon.onmousemove = (e) => {
+      // pageX,Y 문서 전체를 기준으로 삼음 스크롤 화면 포함해서 측정
+      const x = e.pageX;
+      const y = e.pageY;
+      fabricImg.style.left = (x - 250) + "px";
+      fabricImg.style.top = (y - 140) + "px";
+    };
+    fabricCon.addEventListener('mouseout', function () {
+      fabricImg.classList.add('hidden');
+      fabricTag.style.marginRight = "0";
+    });
+
+    const deoimg = document.querySelector('#deoimg');
+    const deoCon = document.querySelector('.containerdeo');
+    const deoTag = document.querySelector('.deotext');
+    console.log(deoimg);
+    console.log(deoCon);
+    console.log(deoTag);
+
+    deoCon.addEventListener('mouseenter', function () {
+      deoimg.animate([{
+          height: '10vh',
+          width: '10vw',
+          opacity: 0
+        },
+        {
+          height: '20vh',
+          width: '20vw',
+          opacity: 0.5
+        },
+        {
+          height: '35vh',
+          width: '30vw',
+          opacity: 1
+        }
+      ], {
+        duration: 500,
+        fill: 'forwards'
+      });
+      deoimg.classList.remove('hidden');
+      deoTag.style.marginLeft = "25vh";
+    });
+    deoCon.onmousemove = (e) => {
+      // pageX,Y 문서 전체를 기준으로 삼음 스크롤 화면 포함해서 측정
+      const x = e.pageX;
+      const y = e.pageY;
+      deoimg.style.left = (x - 250) + "px";
+      deoimg.style.top = (y - 140) + "px";
+    };
+    deoCon.addEventListener('mouseout', function () {
+      deoimg.classList.add('hidden');
+      deoTag.style.marginLeft = "";
+    });
+
+    const handimg = document.querySelector('#handimg');
+    const handCon = document.querySelector('.containerhand');
+    const handTag = document.querySelector('.handtext');
+    console.log(handimg);
+    console.log(handCon);
+    console.log(handTag);
+
+    handCon.addEventListener('mouseenter', function () {
+      handimg.animate([{
+          height: '10vh',
+          width: '10vw',
+          opacity: 0
+        },
+        {
+          height: '20vh',
+          width: '20vw',
+          opacity: 0.5
+        },
+        {
+          height: '35vh',
+          width: '30vw',
+          opacity: 1
+        }
+      ], {
+        duration: 500,
+        fill: 'forwards'
+      });
+      handimg.classList.remove('hidden');
+      handTag.style.marginRight = "25vh";
+    });
+    handCon.onmousemove = (e) => {
+      // pageX,Y 문서 전체를 기준으로 삼음 스크롤 화면 포함해서 측정
+      const x = e.pageX;
+      const y = e.pageY;
+      handimg.style.left = (x - 250) + "px";
+      handimg.style.top = (y - 140) + "px";
+    };
+    handCon.addEventListener('mouseout', function () {
+      handimg.classList.add('hidden');
+      handTag.style.marginRight = "";
+    });
+  </script>
 </body>
 
 </html>

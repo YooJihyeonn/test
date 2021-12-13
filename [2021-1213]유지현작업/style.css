@@ -1,0 +1,196 @@
+/* main font */
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&display=swap");
+/* sub font */
+@import url("https://fonts.googleapis.com/css2?family=Antic+Didone&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Antic+Didone&display=swap");
+/* korean font */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300;400;500;600;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300;400;500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  color: #fff989;
+}
+
+#product {
+  width: 100%;
+  height: 240vh;
+  background-color: #fffcc7;
+  /* position: relative; */
+}
+
+h3 {
+  font-family: "Cinzel", serif;
+  font-weight: 400;
+  font-size: 6rem;
+  color: #547543;
+}
+
+#diffserwrap {
+  width: 100%;
+  height: 67.5vh;
+  /* border: 1px solid red; */
+}
+
+.leftline {
+  width: 85vw;
+  height: 0.2vh;
+  background-color: #547543;
+  border: none;
+  position: absolute;
+  z-index: 1;
+  top: 67vh;
+  left: 0;
+  margin: 0;
+}
+
+.fabirc {
+  width: 100%;
+  height: 55vh;
+  position: relative;
+}
+
+.fabirc h3 {
+  position: absolute;
+  top: 40vh;
+  right: 0;
+}
+
+.rightline {
+  width: 85vw;
+  height: 0.2vh;
+  background-color: #547543;
+  border: none;
+  margin: 0;
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  top: 116vh;
+}
+
+/* script about diffser section*/
+.hidden {
+  display: none;
+  transition-duration: 0.5s, 1s;
+}
+
+/* #diffserwrap{
+          position: relative;
+      } */
+.container {
+  width: 70vw;
+  height: 47vh;
+  position: absolute;
+  z-index: 11;
+  margin-top: 20vh;
+  margin-left: 25vh;
+  border: 1px solid red;
+}
+
+.diffsertext {
+  position: absolute;
+  top: 55vh;
+  left: 25vh;
+  transition-duration: 0.5s, 1s;
+  z-index: 10;
+}
+#diffserimg,
+#fabircimg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30vw;
+}
+.containerfabric {
+  width: 70vw;
+  height: 47vh;
+  position: absolute;
+  z-index: 11;
+  /* margin-top: 67vh; */
+  margin-left: 25vh;
+  border: 1px solid red;
+}
+/* #fabircimg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30vw;
+  } */
+.fabrictext {
+  position: absolute;
+  top: 104vh;
+  right: 35vh;
+  transition-duration: 0.5s, 1s;
+}
+#deoimg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30vw;
+}
+
+#handimg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30vw;
+}
+
+.containerdeo {
+  position: absolute;
+  width: 70vw;
+  height: 50vh;
+  z-index: 11;
+  margin-left: 25vh;
+  /* border: 1px solid blue; */
+}
+
+.deotext {
+  position: absolute;
+  top: 154vh;
+  left: 25vh;
+  transition-duration: 0.5s, 1s;
+}
+
+.deoline {
+  width: 85vw;
+  height: 0.2vh;
+  background-color: #547543;
+  border: none;
+  margin: 0;
+  position: absolute;
+  top: 166vh;
+}
+
+.containerhand {
+  position: absolute;
+  width: 70vw;
+  height: 50vh;
+  z-index: 11;
+  margin-left: 25vh;
+  margin-top: 50vh;
+  border: 1px solid blue;
+}
+
+.handtext {
+  position: absolute;
+  top: 200vh;
+  right: 30vh;
+  transition-duration: 0.5s, 1s;
+}
+
+.handline {
+  width: 85vw;
+  height: 0.2vh;
+  background-color: #547543;
+  border: none;
+  margin: 0;
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  top: 212vh;
+}
