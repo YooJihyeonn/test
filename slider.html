@@ -224,8 +224,8 @@ h4 {
   const change = document.querySelector('.c-bgimge');
   const buttonLeft = document.querySelector('.button-l');
   const buttonRight = document.querySelector('.button-r')
-  const changeImages = document.querySelectorAll('.c-bgimge>div');
-  // const changeImages = ['.sliderlemon','.slidergreenairy','slidersoap','sliderdowny','slidermusk'];
+  const changeImages = document.querySelectorAll('.c-bgimge div');
+  // const changeImages = ['.sliderlemon','.slidergreenairy','.slidersoap','.sliderdowny','.slidermusk'];
   console.log(change);
   console.log(buttonLeft);
   console.log(buttonRight);
@@ -247,6 +247,7 @@ h4 {
     if(counter <=0) return;
     change.style.transition = 'transform 1s ease-in-out';
     counter--;
+    // change.style.transform = `translateX(+(-${size*counter})vw)`;
     change.style.transform = 'translateX('+(-size*counter)+'vw)';
   });
   // jump to first/last slide
@@ -262,24 +263,24 @@ h4 {
     }
   });
 
-  // for(let i=0; i<sliderImages.length; i++){
-  //   sliderImages[i].style.opacity = 0;
-  //   sliderImages[i].style.display = "none";
-  //   sliderImages[i].style.marginLeft = 0;
-  // };
+  for(let i=0; i<sliderImages.length; i++){
+    sliderImages[i].style.opacity = 0;
+    sliderImages[i].style.display = "none";
+    sliderImages[i].style.marginLeft = 0;
+  };
 
-  // let index = 0;
-  // sliderButton.addEventListener('click',()=>{
-  //   let opacityValue =0;
-  //   const fadeIn = setInterval(function(){
-  //     opacityValue += 0.1
-  //     console.log(opacityValue);
-  //     sliderImages[index-1].style.opacity=opacityValue;
-  //     if(opacityValue>1){
-  //       clearInterval(fadeIn)
-  //     }
-  //   },100);
-  //   sliderImages[index].style.display="block"
-  // })
+  let index = 0;
+  sliderButton.addEventListener('click',()=>{
+    let opacityValue =0;
+    const fadeIn = setInterval(function(){
+      opacityValue += 0.1
+      console.log(opacityValue);
+      sliderImages[index-1].style.opacity=opacityValue;
+      if(opacityValue>1){
+        clearInterval(fadeIn)
+      }
+    },100);
+    sliderImages[index].style.display="block"
+  })
 </script>
 </html>

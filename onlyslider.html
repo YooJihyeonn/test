@@ -12,16 +12,16 @@
     box-sizing: border-box;
     list-style: none;
     text-decoration: none;
-    color: #fff989;
+    color: #333;
 }
-.container{
+/* .container{
   width: 20vw;
   height: 45vh;
   border-radius: 20vw 40%;
   position: relative;
   overflow: hidden;
   border: 1px solid green;
-}
+} */
 .c-bgimge {
   width: 100%;
   height: 45vh;
@@ -36,7 +36,7 @@
   border: 1px solid red;
   /* position: absolute; */
 }
-    .sliderlemon{
+  .sliderlemon{
   background-image: url(./images/레몬허브.jpg);
   background-size: cover;
 }
@@ -48,28 +48,99 @@
   background-size: cover;
   background-image: url(./images/whitelily.jpg);
 }
-.sliderdowny{
-  background-size: contain;
-  background-image: url(./images/Folegandros.jpg);
-  background-position: top;
+
+.buttonwrap{
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
-.slidermusk{
-  background-size: 20vw;
-  background-image: url(./images/Xuebing\ Du_\ Photo.png);
+button{
+  width: 10vw;
 }
+#prodctimage{
+  display: flex;
+  justify-content: space-around;
+}
+.hidden{display: none;}
   </style>
 </head>
 <body>
   <div class="container">
     <div class="c-bgimge">
-      <div class="slidermusk" id="lastClone"></div>
       <div class="sliderlemon"></div>
       <div class="slidergreenairy"></div>
       <div class="slidersoap"></div>
-      <div class="sliderdowny"></div>
-      <div class="slidermusk"></div>
-      <div class="sliderlemon" id="firstClone"></div>
+    </div>
+
+    <div id="prodctimage" >
+      <img src="./images/images_41.png" alt="시그니처솝">
+      <img src="./images/images_44.png" alt="그린에리어">
+      <img src="./images/images_47.png" alt="레몬허브">
+    </div>
+
+    <div class="buttonwrap">
+      <button id="before">←</button>
+      <button id="after">→</button>
     </div>
   </div>
+
+  <script>
+    // 오른쪽 버튼 클릭하면 겹쳐진 사진 두개가 오른쪽으로 이동하고 왼쪽 버튼 클릭했을 때는 겹쳐진 사진 두개가 왼쪽으로 이동하는 것이 반복되면 좋겠다.
+    const before = document.querySelector('#before');
+    const after = document.querySelector('#after');
+    const bgImg = document.querySelectorAll('.c-bgimge div');
+    const prodctImg = document.querySelectorAll('#prodctimage>img');
+    const bgArray = ['.sliderlemon','.slidergreenairy','.slidersoap','.sliderdowny','.slidermusk']
+    console.log(before);
+    console.log(after);
+    console.log(bgImg);
+    console.log(prodctImg);
+
+    // 버튼을 클릭했을때 이미지 두개가 동시에 이동
+    
+    //   before.addEventListener('click',()=>{
+    //   for(let i=0; i<bgImg.length; i++){
+    //     bgImg[i].style.marginRight = "10vw"
+    //     prodctImg[i].style.marginRight = "10vw"
+    //   };
+    //   let i = this.nextElementSibling;
+    // });
+  
+    for(let i=0; i<bgImg.length; i++){
+      bgImg[i].style.marginRight = 0;
+      // bgImg[i].style.opacity = 0;
+      prodctImg[i].style.marginRight = 0;
+      // prodctImg[i].style.opacity = 0;
+
+    }
+    let index = 0;
+    before.addEventListener('click',()=>{
+      if(index<bgImg.length){
+        bgImg[index].style.marginRight = "10vw"
+        console.log(`${index}`)
+        console.dir(bgImg[index].previousElementSibling);
+        index +=1
+      }else{
+        // bgImg[index-1].style.display = "none";
+        bgImg[0].style.display = "prodctimage"
+      }
+    })
+    // let index=0;
+    // if(index<bgImg.length){
+    //   let moveValue =0;
+    //   const moveRight = setInterval(function(){
+    //     moveValue += '10vw';
+    //     bgImg[index-1].style.marginRight = moveValue;
+    //     if(moveValue>1){
+    //       clearInterval(moveRight)
+    //     }
+    //     bgImg[index].style.display = "bgArray"
+    //   },100)
+    // }
+    // 알고리즘은 세밀하게 절차를 설계,구상하는 것 "0과1밖에 모르는 것한테 무언가 절차를 떠올려내는 것"
+    // 프로그래밍은 언어의 절차를 설명하는 행위
+  </script>
 </body>
 </html>
