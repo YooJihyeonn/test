@@ -23,7 +23,7 @@
   border: 1px solid green;
 } */
 .c-bgimge {
-  width: 100%;
+  width: 300%;
   height: 45vh;
   border: 1px solid blue;
   display: flex;
@@ -34,7 +34,7 @@
   height: 45vh;
   border-radius: 20vw 40%;
   border: 1px solid red;
-  /* position: absolute; */
+  position: absolute;
 }
   .sliderlemon{
   background-image: url(./images/레몬허브.jpg);
@@ -70,8 +70,8 @@ button{
   <div class="container">
     <div class="c-bgimge">
       <div class="sliderlemon"></div>
-      <div class="slidergreenairy"></div>
-      <div class="slidersoap"></div>
+      <div class="slidergreenairy hidden"></div>
+      <div class="slidersoap hidden"></div>
     </div>
 
     <div id="prodctimage" >
@@ -90,43 +90,50 @@ button{
     // 오른쪽 버튼 클릭하면 겹쳐진 사진 두개가 오른쪽으로 이동하고 왼쪽 버튼 클릭했을 때는 겹쳐진 사진 두개가 왼쪽으로 이동하는 것이 반복되면 좋겠다.
     const before = document.querySelector('#before');
     const after = document.querySelector('#after');
-    const bgImg = document.querySelectorAll('.c-bgimge div');
+    const bgImg = document.querySelectorAll('.c-bgimge>div');
     const prodctImg = document.querySelectorAll('#prodctimage>img');
-    const bgArray = ['.sliderlemon','.slidergreenairy','.slidersoap','.sliderdowny','.slidermusk']
+    // const bgArray = ['.sliderlemon','.slidergreenairy','.slidersoap','.sliderdowny','.slidermusk']
     console.log(before);
     console.log(after);
     console.log(bgImg);
     console.log(prodctImg);
 
     // 버튼을 클릭했을때 이미지 두개가 동시에 이동
-    
-    //   before.addEventListener('click',()=>{
-    //   for(let i=0; i<bgImg.length; i++){
-    //     bgImg[i].style.marginRight = "10vw"
-    //     prodctImg[i].style.marginRight = "10vw"
+      before.addEventListener('click',()=>{
+        for(let i=0; i<bgImg.length; i++){
+          prodctImg[i].style.marginLeft = "10vw"
+          bgImg[i].classList.toggle('hidden');
+        };
+      // let i = this.nextElementSibling;
+    });
+
+    // before.addEventListener('click',()=>{
+    //   for(let index=0; index<bgImg.length; index++){
+    //     bgImg[index].classList.toggle('hidden');
     //   };
-    //   let i = this.nextElementSibling;
     // });
   
-    for(let i=0; i<bgImg.length; i++){
-      bgImg[i].style.marginRight = 0;
-      // bgImg[i].style.opacity = 0;
-      prodctImg[i].style.marginRight = 0;
-      // prodctImg[i].style.opacity = 0;
+    // for(let i=0; i<bgImg.length; i++){
+    //   bgImg[i].style.marginRight = 0;
+    //   // bgImg[i].style.opacity = 0;
+    //   prodctImg[i].style.marginRight = 0;
+    //   // prodctImg[i].style.opacity = 0;
 
-    }
-    let index = 0;
-    before.addEventListener('click',()=>{
-      if(index<bgImg.length){
-        bgImg[index].style.marginRight = "10vw"
-        console.log(`${index}`)
-        console.dir(bgImg[index].previousElementSibling);
-        index +=1
-      }else{
-        // bgImg[index-1].style.display = "none";
-        bgImg[0].style.display = "prodctimage"
-      }
-    })
+    // }
+
+    // 버튼을 클릭할때마다 이미지 하나씩 움직임
+    // let index = 0;
+    // before.addEventListener('click',()=>{
+    //   if(index<bgImg.length){
+    //     bgImg[index].style.marginRight = "10vw"
+    //     console.log(`${index}`)
+    //     console.dir(bgImg[index].previousElementSibling);
+    //     index +=1
+    //   }else{
+    //     // bgImg[index-1].style.display = "none";
+    //     bgImg[0].style.display = "prodctimage"
+    //   };
+    // });
     // let index=0;
     // if(index<bgImg.length){
     //   let moveValue =0;

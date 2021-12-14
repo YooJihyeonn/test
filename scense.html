@@ -144,6 +144,9 @@ h2 {
     font-size: 0.9rem;
 }
 
+#brand-intro>li{
+    color: #fff;
+}
 .b-left {
     margin-left: 10vw;
     line-height: 3.5vh;
@@ -169,7 +172,7 @@ h2 {
     width: 25vw;
     /* border: 1px solid gold; */
 }
-#scense-t>li {
+#scense-t>li>a {
     font-family: 'IBM Plex Sans KR', sans-serif;
     font-size: 1rem;
     text-align: center;
@@ -183,7 +186,7 @@ h2 {
 .sence-image {
     width: 20vw;
     height: 60vh;
-    background-color: salmon;
+    /* background-color: salmon; */
     border-top-right-radius: 15vw 50%;
     border-top-left-radius: 15vw 50%;
     position: absolute;
@@ -271,7 +274,7 @@ h2 {
     </li>
     <div id="scense-wrap" class="flex flex-direction align-item just-b">
         <ul id="scense-t" class="flex">
-            <li class="cherry change ">딥체리</li>
+            <li class="cherry change">딥체리</li>
             <li class="peach-b ">피치티</li>
             <li class="citrus">쥬스프롯</li>
             <li class="lemon-b">레몬허브</li>
@@ -308,25 +311,52 @@ h2 {
   const scenseButtonFour = document.querySelector('.lemon-b');
   const lemon = document.querySelector('.lemon');
 
-  console.log(scenseButtonOne);
-  console.log(deepcherry);
-  scenseButtonOne.addEventListener('click',function(){
-    peachs.classList.toggle('hidden')
-    scenseButtonOne.classList.toggle('change')
-  });
-  scenseButtonTwo.addEventListener('click',()=>{
-    peachs.classList.toggle('hidden')
-    scenseButtonTwo.classList.toggle('change')
-  });
-  scenseButtonThree.addEventListener('click',()=>{
-    juicy.classList.toggle('hidden')
-    scenseButtonThree.classList.toggle('change')
-  });
-  scenseButtonFour.addEventListener('click',()=>{
-    lemon.classList.toggle('hidden')
-    scenseButtonFour.classList.toggle('change')
-  });
+//   console.log(scenseButtonOne);
+//   console.log(deepcherry);
+//   scenseButtonOne.addEventListener('click',function(){
+//     peachs.classList.toggle('hidden')
+//     scenseButtonOne.classList.toggle('change')
+//   });
+//   scenseButtonTwo.addEventListener('click',()=>{
+//     peachs.classList.toggle('hidden')
+//     scenseButtonTwo.classList.toggle('change')
+//   });
+//   scenseButtonThree.addEventListener('click',()=>{
+//     juicy.classList.toggle('hidden')
+//     scenseButtonThree.classList.toggle('change')
+//   });
+//   scenseButtonFour.addEventListener('click',()=>{
+//     lemon.classList.toggle('hidden')
+//     scenseButtonFour.classList.toggle('change')
+//   });
   // 이벤트 타켓 event.target / event.currentTarget
+
+  const buttonTag = document.querySelectorAll('#scense-t li');
+//   const imagArray = ['.deepcherry', '.peachs','.juicy','.lemon'];
+  const imagTag = document.querySelectorAll('.sence-image div')
+  console.log(buttonTag);
+  console.log(imagTag);
+
+//   for(let i=0; i<buttonTag.length; i++){
+//       buttonTag[i].addEventListener('click',function(event){
+//         event.target.classList.toggle('change');
+//         // let imagTag = event.nextElementSibling;
+//         for(let index =0; index<3; index++){
+//         imagTag[index].classList.toggle('hidden');
+//         };
+//       });
+//   };
+
+  for(let i=0; i<buttonTag.length; i++){
+      buttonTag[i].addEventListener('click',function(event){
+        event.target.classList.toggle('change');
+        // for(let index =0; index<imagTag.length; index++){
+        imagTag[i].classList.toggle('hidden');
+        // let imagTag = event.nextElementSibling;
+        // };
+      });
+  };
+  
 
 //   스크롤하면 하단에 로고 이미지가 회전했으면 좋겠다.
   function rotateImage(){
@@ -334,8 +364,6 @@ h2 {
     console.dir(circleText);
     circleText.style.transform = "rotate(" + window.pageYOffset/2 + "deg)";
     // 웹 브라우저에서 현재 화면의 스크롤 정보를 알아야 할 때 pageYOffset or scrollY : 스크롤 화면 수직 이동하는 픽셀수
-    // 왜 따옴표를 저렇게 썻을까요...? 그리고 pageYOffset을 왜 2로 나누었을까요..?
-    // 저렇게 걸쳐지게 따옴표를 하지 않으면 작동이 되지 않는데 왜그런걸까요..? 
   }
   window.addEventListener('scroll',rotateImage);
 </script>
