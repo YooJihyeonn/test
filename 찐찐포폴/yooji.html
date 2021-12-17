@@ -266,12 +266,12 @@
 
 <script>
   const scrollSider = document.querySelector('body');
-  const scrollScale = document.querySelector('#main')
+  const scrollScale = document.querySelector('body > div').clientHeight;
   console.log(scrollSider);
   console.dir(scrollSider); //scrllWidth : 4145
 
   const windowWidth = window.innerWidth;
-  const wheelWidth = scrollScale.pageXOffset;
+  // const wheelWidth = scrollScale.pageXOffset;
   // const wheelWidth = scrollScale.clientWidth;
   console.log(windowWidth) //1179
   console.log(wheelWidth);
@@ -284,7 +284,7 @@
       eventHandle++;
       console.log(eventHandle);
       window.scrollTo({
-        left:wheelWidth * eventHandle,
+        left:scrollScale * eventHandle,
         behavior : 'smooth'
       });
     }else{
