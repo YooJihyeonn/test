@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  html,
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+main {
+  overflow-x: hidden;
+  display: flex;
+  /* width: 400vw; */
+}
+
+/* h1 {
+  margin: 0;
+  padding: 0;
+} */
+
+section {
+  min-width: 100vw;
+  min-height: 100vh;
+  /* width: 100vw;
+  height: 100vh; */
+  display: flex;
+  /* justify-content: center;
+  align-items: center;
+  font-size: 4ch; */
+  /* border: 1px solid red; */
+}
+
+section:nth-child(even) {
+  background-color: teal;
+  color: white;
+}
+
+</style>
+<body>
+  <main>
+    <section></section>
+    <section></section>
+    <section></section>
+    <section></section>
+  </main>
+</body>
+<script>
+  const scrollContainer = document.querySelector("main");
+
+scrollContainer.addEventListener("wheel", (evt) => {
+    evt.preventDefault();
+    scrollContainer.scrollLeft += evt.deltaY;
+});
+</script>
+</html>

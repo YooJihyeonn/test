@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{margin: 0;
+  }
+  body{
+
+  }
+  #scroll{
+    overflow-x: hidden;
+    display: flex;
+    /* flex-wrap: nowrap; */
+    /* overflow: auto; */
+  }
+  
+  /* .size{width: 100vw; height: 100vh;} */
+  .main{background-color: lightblue;     min-width: 100vw;
+    min-height: 100vh;
+    display: flex;}
+  .aboutme{background-color: lightskyblue;     min-width: 100vw;
+    min-height: 100vh;
+    display: flex;}
+  .web{background-color: mediumturquoise;     min-width: 100vw;
+    min-height: 100vh;
+    display: flex;}
+  .poster{background-color: paleturquoise;     min-width: 100vw;
+    min-height: 100vh;
+    display: flex;}
+  </style>
+</head>
+<body>
+  <div id="scroll">
+    <div class="main"></div>
+    <div class="aboutme"></div>
+    <div class="web"></div>
+    <div class="poster"></div>
+  </div>
+</body>
+
+  <script>
+    const mouseWheel = document.querySelector('#scroll');
+    console.log(mouseWheel);
+
+    // mouseWheel.addEventListener('wheel',function(e){
+    //   e.preventDefault();
+    //   const count = 1000;
+    //   if(e.deltaY > 0)
+    //   mouseWheel.scrollLeft += count;
+    //   else
+    //   mouseWheel.scrollLeft -= count;
+    // });
+
+    mouseWheel.addEventListener('wheel',(evt)=>{
+      evt.preventDefault();
+      mouseWheel.scrollLeft += evt.deltaY;
+    })
+
+
+  </script>
+</html>
